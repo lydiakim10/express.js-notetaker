@@ -3,7 +3,7 @@ const fs = require("fs");
 const uuid = require("uuid").v4;
 
 module.exports = (app) => {
-    let notesData = JSON.parse(fs.readFileSync("../db/db.json"));
+    let notesData = JSON.parse(fs.readFileSync("./db/db.json"));
 
     app.get("/api/notes", (req, res) => {
         return res.json(notesData);
@@ -16,7 +16,7 @@ module.exports = (app) => {
         };
         notesData.push(addNote);
 
-        fs.writeFile("../db/db.json", JSON.stringify(notesData), (err) => {
+        fs.writeFile("./db/db.json", JSON.stringify(notesData), (err) => {
             if (err) {
                 throw err;
             }
@@ -34,7 +34,7 @@ module.exports = (app) => {
             }
         }
 
-        fs.writeFile("../db/db.json", JSON.stringify(notesData), (err) => {
+        fs.writeFile("./db/db.json", JSON.stringify(notesData), (err) => {
             if (err) throw err;
         });
 
