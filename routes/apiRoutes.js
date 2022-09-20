@@ -2,7 +2,7 @@ const fs = require("fs");
 const uuid = require("uuid").v4;
 
 module.exports = (app) => {
-    let notesData = JSON.parse(fs.readFileSync("./db/db.json"));
+    let notesData = JSON.parse(fs.readFileSync("./db/db.json", "utf-8"));
 
     app.get("/api/notes", (req, res) => {
         return res.json(notesData);
