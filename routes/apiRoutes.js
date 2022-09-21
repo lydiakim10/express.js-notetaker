@@ -1,9 +1,12 @@
+// npm installments
 const fs = require("fs");
 const uuid = require("uuid").v4;
+
 
 module.exports = (app) => {
     let notesData = JSON.parse(fs.readFileSync("./db/db.json", "utf-8"));
 
+    // Creates a new note and adds the data to the db.json file
     app.get("/api/notes", (req, res) => {
         return res.json(notesData);
     });
@@ -24,6 +27,7 @@ module.exports = (app) => {
         res.json(notesData);
     });
 
+    // Allows the user to delete notes
     app.delete("/api/notes/:id", (req, res) => {
         const notesId = req.params.id;
 
