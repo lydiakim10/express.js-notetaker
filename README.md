@@ -11,6 +11,7 @@ Whether the user is launching the app through their local host or through Heroku
 
 ## Website Screnshot
 ![Start](vids&pics/full-website-start.png)
+
 ![Notes](vids&pics/full-website-notes.png)
 
 ## Video Demonstration
